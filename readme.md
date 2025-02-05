@@ -12,10 +12,8 @@
 2. 环境变量说明
 
 ```txt
-钱包
+钱包路径
 SENDER_WALLET_PATH='~/wallets/wallet.json'
-#钱包密码
-SENDER_WALLET_PASSWORD='passwd'
 #solana 主网 rpc
 MAIN_NET_RPC=''
 MAGIC_MATH_RPC=''

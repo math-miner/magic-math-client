@@ -6,20 +6,19 @@ import {
   AddressLookupTableAccount,
   TransactionInstruction,
 } from "@solana/web3.js";
-import { loadEncryptedKey } from "./keypair-util";
+import { loadKeypair } from "./keypair-util";
 import * as dotenv from "dotenv"
 
 dotenv.config();
 export const {
   SENDER_WALLET_PATH,
-  SENDER_WALLET_PASSWORD,
   MAIN_NET_RPC,
   MAGIC_MATH_RPC,
   JUPITER_API_ENDPOINT
 } = process.env;
 
 export const wallet = new Wallet(
-  loadEncryptedKey(SENDER_WALLET_PATH as string, SENDER_WALLET_PASSWORD as string)
+  loadKeypair(SENDER_WALLET_PATH as string)
 );
 
 export const connection = new Connection(MAIN_NET_RPC as string);

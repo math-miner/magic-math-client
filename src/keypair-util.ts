@@ -42,6 +42,12 @@ export const loadEncryptedKey = (filePath: string, passphrase: string): Keypair 
   return Keypair.fromSecretKey(decryptedKey);
 };
 
+export const loadKeypair = (filePath: string): Keypair => {
+  const keypairData = fs.readFileSync(filePath, 'utf8');
+  const secretKey = JSON.parse(keypairData);
+  return Keypair.fromSecretKey(new Uint8Array(secretKey));
+};
+
 /*
 // 使用示例
 const passphrase = ''; // 用于加密解密的密码
